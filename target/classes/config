@@ -1,0 +1,9 @@
+#device Properties
+#Device #1 - For Android GalaxyA71
+deviceName=Galaxy A71
+udid=R58N83SXT7E
+platformVersion=11
+
+#Appium Config
+url=http://127.0.0.1:4723
+
