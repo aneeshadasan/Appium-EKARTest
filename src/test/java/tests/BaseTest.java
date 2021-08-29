@@ -39,7 +39,7 @@ public class BaseTest {
         cap.setCapability("appPackage", "in.testdemo.map");
         cap.setCapability("appActivity", "in.testdemo.map.MainActivity");
 
-        URL url = new URL(prop.getProperty("url")+"/wd/hub");
+        URL url = new URL(prop.getProperty("url") + "/wd/hub");
         driver = new AndroidDriver<MobileElement>(url, cap);
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         System.out.println("Application  Started... ");
@@ -51,8 +51,7 @@ public class BaseTest {
         driver.quit();
     }
 
-    public static void loadProperties()
-    {
+    public static void loadProperties() {
         File file = new File("src/main/resources/config");
         FileInputStream fileInput = null;
         try {
@@ -60,13 +59,10 @@ public class BaseTest {
             prop.load(fileInput);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 
     public WebDriver getDriver() {
         return driver;
