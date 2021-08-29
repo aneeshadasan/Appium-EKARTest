@@ -7,8 +7,7 @@ public class EKarTest extends BaseTest {
 
     @Test
     @DisplayName("Ekar App Test : To Verify that the  User is able to upload 4 Images and Proceed. ")
-    public void TestOne()
-    {
+    public void TestOne() {
         try {
             ekarDemoPage.whenISelectLocation();
         } catch (InterruptedException e) {
@@ -21,8 +20,7 @@ public class EKarTest extends BaseTest {
 
     @Test
     @DisplayName("Ekar App Test :  To verify that the User is  not be able to proceed if he failed to upload all the  images")
-    public void TestTwo()
-    {
+    public void TestTwo() {
         try {
             ekarDemoPage.whenISelectLocation();
         } catch (InterruptedException e) {
@@ -33,7 +31,6 @@ public class EKarTest extends BaseTest {
         ekarDemoPage.thenIVerifyWarningMessageisDisaplayed();
 
     }
-
 
 
 }

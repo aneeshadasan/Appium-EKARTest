@@ -13,7 +13,6 @@ public class EkarDemoPage extends BasePage {
     private static String ANDROID_PHOTO_PATH = "/mnt/sdcard/Pictures";
 
     By btnWhileUsingApp = By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
-    //By loc = By.className("android.view.View");
     By loc = By.xpath("//*[@class='android.view.View'][@content-desc='Google Map']");
     By frontSideImg = By.id("in.testdemo.map:id/front_img");
     By backSideImg = By.id("in.testdemo.map:id/back_img");
@@ -36,6 +35,7 @@ public class EkarDemoPage extends BasePage {
 
     }
 
+    /* Method to Capture and Image from Camera and Upload to App*/
     public void uploadImage(By element) {
         clickon(element);
         clickon(captureFromCamera);
@@ -43,33 +43,33 @@ public class EkarDemoPage extends BasePage {
         clickon(getElements(cameraOK).get(1));
     }
 
+    /* Method to Enter the Comments and submit the Complaint to the App*/
     public void enterCommentsAndSubmit() {
         getElement(txtComment).sendKeys("Comments Entered");
         attemptToScrollIntoView(btnNext);
         clickon(btnNext);
     }
 
+    /* Method to upload all the 4 images */
     public void uploadAllImagesFromCamera() {
         uploadImage(frontSideImg);
         uploadImage(backSideImg);
         uploadImage(leftSideImg);
         uploadImage(rightSideImg);
     }
+
+    /* Method to upload only 2 images */
     public void uploadImagesFromCamera() {
         uploadImage(frontSideImg);
-      //  uploadImage(backSideImg);
-        //uploadImage(leftSideImg);
-
+        uploadImage(backSideImg);
     }
 
-    public void thenIVerifyWarningMessageisDisaplayed()
-    {
-        Assertions.assertEquals(true, getElement(btnNext).isDisplayed(),"Complaint Not accepted as all the Images are not Uploaded ");
+    public void thenIVerifyWarningMessageisDisaplayed() {
+        Assertions.assertEquals(true, getElement(btnNext).isDisplayed(), "Complaint Not accepted as all the Images are not Uploaded ");
     }
 
-    public void thenIVerifyComplaintAcceptedMessage()
-    {
-        Assertions.assertEquals(true, getElement(loc).isDisplayed()," Image Upload Complete");
+    public void thenIVerifyComplaintAcceptedMessage() {
+        Assertions.assertEquals(true, getElement(loc).isDisplayed(), " Image Upload Complete");
     }
 
 }
